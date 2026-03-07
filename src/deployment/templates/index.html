@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PPE Detection - Inference</title>
+</head>
+<body>
+    <h1>PPE Detection - Inference</h1>
+    <form action="/infer" method="post" enctype="multipart/form-data">
+        <label for="model_name">Select Model from List:</label>
+        <select name="model_name" id="model_name">
+            <option value="">-- Select a model --</option>
+            {% for model in models %}
+                <option value="{{ model.name }}">{{ model.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="model_file">Or Upload Model File (.pt):</label>
+        <input type="file" name="model_file" id="model_file" accept=".pt">
+        <br><br>
+        <label for="file">Upload Image:</label>
+        <input type="file" name="file" id="file" accept="image/*" required>
+        <br><br>
+        <button type="submit">Run Inference</button>
+    </form>
+    <p><small>You can either select a model from the list or upload a model file from your computer. If both are provided, the uploaded model will be used.</small></p>
+</body>
+</html>

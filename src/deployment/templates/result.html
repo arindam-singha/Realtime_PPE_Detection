@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PPE Detection - Result</title>
+</head>
+<body>
+    <h1>Inference Result</h1>
+    {% if result_img %}
+        <img src="{{ result_img }}" alt="Result Image" style="max-width: 600px;">
+        <br><br>
+        <a href="{{ download_img }}" download>
+            <button type="button">Download Result Image</button>
+        </a>
+    {% else %}
+        <p>No result to display.</p>
+    {% endif %}
+    <br><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
