@@ -53,6 +53,29 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Setup
+
+1. Create a `.env` file in the root directory and add your Roboflow API key along with other configuration:
+
+   ```env
+   ROBOFLOW_API_KEY=your_api_key_here
+   MODEL_IMG_SIZE=(640, 480)
+   MODEL_EPOCHS=100
+   MODEL_BATCH_SIZE=16
+   ```
+
+2. Run the complete pipeline to download data, preprocess, train, and deploy:
+
+   ```bash
+   python pipeline.py
+   ```
+
+   This script will sequentially:
+   - Download the dataset (if not already present)
+   - Preprocess the data
+   - Train the model
+   - Start the FastAPI deployment server
+
 ---
 
 ## 📁 Project Structure

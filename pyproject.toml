@@ -15,7 +15,21 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "pandas>=2.3.3",
+    "torch",
+    "torchvision",
+    "markupsafe>=2.1.3,<3.0.0",
+    "ipykernel>=6.31.0",
+    "python-multipart>=0.0.20",
+    "seaborn>=0.13.2",
+    "dotenv>=0.9.9",
+    "streamlit>=1.50.0",
 ]
 
-[tool.uv]
-isolated = true
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+
